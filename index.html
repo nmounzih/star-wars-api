@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Star Wars API</title>
+    <link rel='stylesheet' href='star_wars.css'/>
+  </head>
+  <body>
+    <br><div class='C_title' style='font-size: 40px' id='characters'><u>Characters</u></div>
+    <div class='F_title' style='font-size: 40px' id='films'><u>Films</u></div>
+    <div class='V_title' style='font-size: 40px' id='vehicles'><u>Vehicles</u></div>
+    <div class='C_title'>
+    <span class='person'></span>
+  </div>
+  <div class='F_title'>
+    <span id='film'></span>
+  </div>
+  <div class='V_title'>
+    <span id='vehicle'></span>
+  </div>
+  <div class='C_title'>
+  <span id='personDetail'></span>
+</div>
+<!-- <p><span id='personDetail'></span> -->
+<script src='https://code.jquery.com/jquery-3.2.1.min.js'></script>
+<script type='text/javascript' src=js/star_wars.js></script>
+<script>//keeping this here as example of id iteration
+$( ".person" ).each(function( i ) {
+   if ( this.style.color !== "blue" ) {
+     this.style.color = "blue";
+   } else {
+     this.style.color = "";
+   }
+ });
+
+</script>
+  </body>
+</html>
