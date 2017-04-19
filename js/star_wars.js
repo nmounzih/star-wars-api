@@ -1,116 +1,103 @@
 function getPeople(p){
-  for(var p=0; p < 87; p++){
+  for(var p=0; p < 88; p++){
+  let id_num = p;
   let settings = {
     url: "http://swapi.co/api/people/" + p
   }
   $.ajax(settings).done(function(result){
-    console.log(result);
-    console.log(result.name);
     let person = result.name;
-    $('.person').append(person + '<br>');
-  })
-}
+    $('#characterDiv').append('<div id=' + id_num + '><a onclick="getPersonDetail('+id_num+')">' + person + '</a><br>');
+    })
+  }
 }
 
 function getPersonDetail(p){
+  let id_num = p;
   let settings = {
     url: "http://swapi.co/api/people/" + p
   }
   $.ajax(settings).done(function(result){
-    console.log(result.name);
-    console.log(result.birth_year);
-    console.log(result.films);
-    console.log(result.species);
-    console.log(result.vehicles);
-    console.log(result.starships);
     let name = result.name;
     let birth_year = result.birth_year;
     let films = result.films;
     let species = result.species;
     let vehicles = result.vehicles;
     let starships = result.starships;
-    $('#personDetail').append(name + '<br>');
-    $('#personDetail').append(birth_year + '<br>');
-    $('#personDetail').append(films + '<br>');
-    $('#personDetail').append(species + '<br>');
-    $('#personDetail').append(vehicles + '<br>');
-    $('#personDetail').append(starships + '<br>');
+    $('#'+id_num).empty();
+    $('#'+id_num).append(name + '<br>');
+    $('#'+id_num).append(birth_year + '<br>');
+    $('#'+id_num).append(films + '<br>');
+    $('#'+id_num).append(species + '<br>');
+    $('#'+id_num).append(vehicles + '<br>');
+    $('#'+id_num).append(starships + '<br>');
   })
 }
 
 function getFilms(f){
-  for(var f=0; f<7; f++){
+  for(var f=0; f<8; f++){
+  let id_num = f;
   let settings = {
     url: "http://swapi.co/api/films/" + f
   }
   $.ajax(settings).done(function(result){
-    console.log(result);
-    console.log(result.title);
     let film = result.title;
-    $('#film').append(film + '<br>');
+    $('#filmDiv').append('<div id=' + id_num + '><a onclick="getFilmDetail('+id_num+')">' + film + '</a><br>');
   })
 }
 }
 
 function getFilmDetail(f){
+  let id_num = f;
   let settings = {
     url: "http://swapi.co/api/films/" + f
   }
   $.ajax(settings).done(function(result){
-    console.log(result.title);
-    console.log(result.episode_id);
-    console.log(result.opening_crawl);
-    console.log(result.release_date);
-    console.log(result.characters);
     let title = result.title;
     let episode_id = result.episode_id;
     let opening_crawl = result.opening_crawl;
     let release_date = result.release_date;
-    let characters = result.characters;
-    $('#title').append(title + '<br>');
-    $('#opening_crawl').append(opening_crawl + '<br>');
-    $('#release_date').append(release_date + '<br>');
-    $('#characters').append(characters + '<br>');
+    // let characters = result.characters;
+    $('#'+id_num).empty();
+    $('#'+id_num).append(title + '<br>');
+    $('#'+id_num).append(opening_crawl + '<br>');
+    $('#'+id_num).append(release_date + '<br>');
+    // $('#'+id_num).append(characters + '<br>');
     //slice characters later to get top 3
   })
 }
 
 function getVehicles(v){
   for(var v=0; v<39; v++){
+  let id_num = v;
   let settings = {
     url: "http://swapi.co/api/vehicles/" + v
   }
   $.ajax(settings).done(function(result){
-    console.log(result);
-    console.log(result.name);
     let vehicle = result.name;
-    $('#vehicle').append(vehicle + '<br>');
+    $('#vehicleDiv').append('<div id=' + id_num + '><a onclick="getVehicleDetail('+id_num+')">' + vehicle + '</a><br>');
   })
 }
 }
 
 function getVehicleDetail(v){
+  let id_num = v;
   let settings = {
     url: "http://swapi.co/api/vehicles/" + v
   }
   $.ajax(settings).done(function(result){
-    console.log(result.name);
-    console.log(result.model);
-    console.log(result.max_atmosphering_speed);
-    console.log(result.vehicle_class);
-    console.log(result.length);
     let name = result.name;
     let model = result.model;
     let speed = result.max_atmosphering_speed;
     let vehicle_class = result.vehicle_class;
     let length = result.length;
-    $('#vehicleDetail').append(name + '<br>');
-    $('#vehicleDetail').append(model + '<br>');
-    $('#vehicleDetail').append(speed+ '<br>');
-    $('#vehicleDetail').append(vehicle_class + '<br>');
-    $('#vehicleDetail').append(length + '<br>');
+    $('#'+id_num).append(name + '<br>');
+    $('#'+id_num).append(model + '<br>');
+    $('#'+id_num).append(speed+ '<br>');
+    $('#'+id_num).append(vehicle_class + '<br>');
+    $('#'+id_num).append(length + '<br>');
   })
 }
+
 
 
 $('#characters').click(getPeople);
