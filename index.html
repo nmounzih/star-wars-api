@@ -4,35 +4,32 @@
     <meta charset="utf-8">
     <title>Star Wars API</title>
     <link rel='stylesheet' href='star_wars.css'/>
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css'>
+    <script src='https://code.jquery.com/jquery-3.2.1.min.js'></script>
   </head>
   <body>
-    <br><div class='C_title' style='font-size: 40px' id='characters'><u>Characters</u></div>
-    <div class='F_title' style='font-size: 40px' id='films'><u>Films</u></div>
-    <div class='V_title' style='font-size: 40px' id='vehicles'><u>Vehicles</u></div>
-    <div class='C_title'>
-    <span class='person'></span>
-  </div>
-  <div class='F_title'>
-    <span id='film'></span>
-  </div>
-  <div class='V_title'>
-    <span id='vehicle'></span>
-  </div>
-  <div class='C_title'>
-  <span id='personDetail'></span>
-</div>
-<!-- <p><span id='personDetail'></span> -->
-<script src='https://code.jquery.com/jquery-3.2.1.min.js'></script>
+    <div class='container'>
+      <div class='row'>
+        <div class='col-md-4' id='characters'>Characters</div>
+        <div class='col-md-4' id='films'>Films</div>
+        <div class='col-md-4' id='vehicles'>Vehicles</div>
+      </div>
+      <div class='row'>
+        <div class='col-md-4' id='characterDiv'></div>
+        <div class='col-md-4' id='filmDiv'></div>
+        <div class='col-md-4' id='vehicleDiv'></div>
+      </div>
 <script type='text/javascript' src=js/star_wars.js></script>
 <script>//keeping this here as example of id iteration
-$( ".person" ).each(function( i ) {
-   if ( this.style.color !== "blue" ) {
-     this.style.color = "blue";
-   } else {
-     this.style.color = "";
-   }
- });
+// $( ".person" ).each(function( i ) {
+//    if ( this.style.color !== "blue" ) {
+//      this.style.color = "blue";
+//    } else {
+//      this.style.color = "";
+//    }
+//  });
 
 </script>
+</div>
   </body>
 </html>
